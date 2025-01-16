@@ -26,16 +26,12 @@ const app = express();
 // Middleware to generate a unique request ID
 app.use(assignRequestId);
 
-// Add some test routes
-// app.get('/', (req, res) => {
-//   res.send({ message: 'Request ID Middleware is working!', requestId: req.id });
-// });
 
-// Add a route to trigger an error
-// app.get('/error', (req, res, next) => {
-//   const error = new Error('Testing error handling');
-//   next(error);
-// });
+app.get('/', (req, res) => {
+  res.send('Oakly Web backend is working!');
+});
+
+
 
 const allowedOrigins = [
   "https://ecom-project-t2.netfy.app", // Production frontend
